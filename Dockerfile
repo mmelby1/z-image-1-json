@@ -24,8 +24,9 @@ RUN comfy model download \
   --filename qwen_3_4b.safetensors
 
 # Node 7: VAELoader expects 'ae.safetensors'
+# FIXED: Changed URL to Comfy-Org public repo to avoid "Unauthorized" error
 RUN comfy model download \
-  --url https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors \
+  --url https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors \
   --relative-path models/vae \
   --filename ae.safetensors
 
