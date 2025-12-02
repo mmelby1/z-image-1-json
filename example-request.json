@@ -1,0 +1,232 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "seed": 156,
+          "steps": 8,
+          "cfg": 1,
+          "sampler_name": "euler_ancestral",
+          "scheduler": "sgm_uniform",
+          "denoise": 1,
+          "model": [
+            "34",
+            0
+          ],
+          "positive": [
+            "9",
+            0
+          ],
+          "negative": [
+            "10",
+            0
+          ],
+          "latent_image": [
+            "14",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "3": {
+        "inputs": {
+          "seed": 156,
+          "steps": 8,
+          "cfg": 1,
+          "sampler_name": "euler_ancestral",
+          "scheduler": "sgm_uniform",
+          "denoise": 0.6,
+          "model": [
+            "33",
+            0
+          ],
+          "positive": [
+            "9",
+            0
+          ],
+          "negative": [
+            "10",
+            0
+          ],
+          "latent_image": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "6": {
+        "inputs": {
+          "filename": "z_image_turbo_bf16.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "7": {
+        "inputs": {
+          "filename": "ae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "8": {
+        "inputs": {
+          "filename": "qwen_3_4b.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "9": {
+        "inputs": {
+          "text": "a woman on a chair in a cafe",
+          "clip": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "10": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "12": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "13": {
+        "inputs": {
+          "images": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "14": {
+        "inputs": {
+          "value": 1440
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "EmptyLatentImage"
+        }
+      },
+      "16": {
+        "inputs": {
+          "value": 1440
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "EmptyLatentImage"
+        }
+      },
+      "32": {
+        "inputs": {
+          "filename_prefix": "Z_turbo/%date:yyyy-MM-dd%/image",
+          "images": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "33": {
+        "inputs": {
+          "value": 1,
+          "model": [
+            "6",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "34": {
+        "inputs": {
+          "value": 7,
+          "model": [
+            "6",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "36": {
+        "inputs": {
+          "samples": [
+            "1",
+            0
+          ],
+          "vae": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "58": {
+        "inputs": {
+          "images": [
+            "36",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      }
+    }
+  }
+}
