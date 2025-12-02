@@ -5,6 +5,7 @@ FROM runpod/worker-comfyui:5.5.1-base
 # Z-Image Turbo support is brand new. We must update ComfyUI to the latest commit.
 RUN cd /comfyui && \
     git config --global --add safe.directory /comfyui && \
+    git checkout master && \
     git pull
 
 # 3. Upgrade critical python dependencies
