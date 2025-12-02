@@ -1,5 +1,5 @@
 # clean base image containing only comfyui, comfy-cli and comfyui-manager
-FROM runpod/worker-comfyui:5.5.0-base
+FROM runpod/worker-comfyui:5.5.1-base
 
 # make sure we have a new safetensors build
 RUN python -m pip install --no-cache-dir --upgrade safetensors
